@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>R4-TR3</title>
+        <link rel="stylesheet" href="style.css"> 
+   
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+        }
+        .shape {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%; /* 圆形 */
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .text {
+            position: absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px; 
+            z-index: 100;
+        }
+
+        .text1 {
+            top: 50%;
+            left: 10%;
+            color: white; 
+        }
+
+        .text2 {
+            top: 50%;
+            left: 35%;
+            color: white; 
+        }
+
+
+
+
+
+        .text3 {
+            top: 36%;
+            left: 25%;
+            color: rgb(41, 41, 41); 
+        }
+
+        .text4 {
+            top: 36.8%;
+            left: 25%;
+            color: rgb(55, 55, 55); 
+        }
+
+        .text5 {
+            top: 38.5%;
+            left: 25%;
+            color: rgb(87, 87, 87); 
+        }
+
+        .text6 {
+            top: 41.3%;
+            left: 25%;
+            color: rgb(122, 122, 122); 
+        }
+
+        .text7 {
+            top: 45%;
+            left: 25%;
+            color: rgb(157, 157, 157); 
+        }
+
+
+
+
+
+
+        .text8 {
+            top: 55%;
+            left: 25%;
+            color: rgb(157, 157, 157);
+        }
+
+        .text9 {
+            top: 58.7%;
+            left: 25%;
+            color: rgb(122, 122, 122); 
+        }
+
+        .text10 {
+            top: 61.5%;
+            left: 25%;
+            color: rgb(87, 87, 87); 
+        }
+
+        .text11 {
+            top: 63.2%;
+            left: 25%;
+            color: rgb(55, 55, 55); 
+        }
+
+        .text12 {
+            top: 64%;
+            left: 25%;
+            color: rgb(41, 41, 41); 
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    document.addEventListener('mousemove', function(e) {
+        const shape = document.createElement('div');
+        shape.classList.add('shape');
+        
+        // 设置随机颜色和大小
+        shape.style.backgroundColor = getRandomColor();
+        const size = Math.random() * 70 + 10; // 大小
+        shape.style.width = `${size}px`;
+        shape.style.height = `${size}px`;
+
+        const borderRadius = Math.random() * 50; // 0% 到 50% 的圆角
+        shape.style.borderRadius = `${borderRadius}%`;
+        
+        // 设置位置
+        shape.style.left = `${e.pageX - size / 2}px`;
+        shape.style.top = `${e.pageY - size / 2}px`;
+
+        document.body.appendChild(shape);
+
+        setTimeout(() => {
+            shape.remove();
+        }, 1000); // 1 秒后删除
+    }, 50);
+
+    // 随机颜色函数
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+    
+</script>
+
+<div class="text text1">When everything<b><i><a href="page6.html" style="color: grey;"> fades</a></i></b>, what drives us forward?</div>
+<div class="text text2">When the merchandise and its cultural influence are completely annihilated, what is left?</div>
+
+<div class="text text3">When the totem and its cultural influence are completely annihilated, what is left?</div>
+<div class="text text4">When those activities and their cultural influence are completely annihilated, what is left?</div>
+<div class="text text5">When the mural and its cultural influence are completely annihilated, what is left?</div>
+<div class="text text6">When the sculpture and their cultural influence are completely annihilated, what is left?</div>
+<div class="text text7">When the poster and its cultural influence are completely annihilated, what is left?</div>
+
+<div class="text text8">When film and its cultural influence are completely annihilated, what is left?</div>
+<div class="text text9">When comics and its cultural influence are completely annihilated, what is left?</div>
+<div class="text text10">When novels and their cultural influence are completely annihilated, what is left?</div>
+<div class="text text11">When the toy and its cultural influence are completely annihilated, what is left?</div>
+<div class="text text12">When the cards and their cultural influence are completely annihilated, what is left?</div>
+
+    </body>
+</html>

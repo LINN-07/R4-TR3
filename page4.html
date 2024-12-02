@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>R4-TR3</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        html {
+            animation: none;
+        }
+
+        img {
+            animation: none;
+            height: 150px;
+            width: auto;
+            margin: 7px; 
+        }
+
+        body {
+            display: flex;
+            align-items: center; 
+            flex-direction: column;
+        }
+
+        
+
+
+        @keyframes fadeToBlack {
+            from {
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            to {
+                background-color: black;
+            }
+        }
+
+        @keyframes darkenImage {
+            from {
+                filter: brightness(100%);
+            }
+
+            to {
+                filter: brightness(0%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="41.jpg" style="height: 150px; width: auto;">   
+    <img src="42.jpg" style="height: 150px; width: auto;">
+    <img src="43.jpg" style="height: 150px; width: auto;">
+    <img src="44.jpg" style="height: 150px; width: auto;">
+    <img src="45.jpg" style="height: 150px; width: auto;">
+
+    <p style="position: absolute; margin-top: 80px; margin-left: -44%;  transform: translateX(-50%)">The fear of nuclear threats was reflected in cultural works.</p>
+    <p style="position: absolute; margin-top: 240px; margin-left: -41%;  transform: translateX(-50%)">Conflict drove the public's yearning for stories of heroism and hope.</p>
+    <p style="position: absolute; margin-top: 390px; margin-left: -53%;  transform: translateX(-50%)">Space Race.<br>The pioneers, the star-sailors, <br>the thinkers, the visionaries, the doers.</p>
+    <p style="position: absolute; margin-top: 545px; margin-left: -46%;  transform: translateX(-50%)">The 501st Legion, a fan organization with a global reach, <br>transforms individual passion <br>into social influence through events and fundraising.</p>
+    <p style="position: absolute; margin-top: 710px; margin-left: -44%;  transform: translateX(-50%)">Sensory impact, meaning dissolution, <br>the significance of IP extends far beyond itself.<br>Pop culture fills the need for society's emotions and memories.</p>
+
+
+
+
+
+
+
+
+
+    <p style="position: absolute; margin-top: 80px; margin-left: 70%;"><b>Fear and Desire</b></p>
+    <p style="position: absolute; margin-top: 240px; margin-left: 70%;  "><b>Heroism, Communal Victory, Group Belief</b></p>
+    <p style="position: absolute; margin-top: 400px; margin-left: 70%;"><b>Unknown and Adventure</b></p>
+    <p style="position: absolute; margin-top: 560px; margin-left: 70%;"><b>Community and Collectivity</b></p>
+    <p style="position: absolute; margin-top: 730px; margin-left: 70%;"><b>Reconstruction and Legacy</b></p>
+
+
+
+    <div class="next" style="color: rgb(0, 0, 0);font-size: 16px;">And so the<a href="#" id="blackenButton"> connections </a>were made.</div>
+    <script>
+        const blackenButton = document.getElementById('blackenButton');
+
+        blackenButton.addEventListener('click', function () {
+            // 获取html元素并应用页面变黑动画
+            const htmlElement = document.documentElement;
+            htmlElement.style.animation = 'fadeToBlack 2s ease-in-out forwards';
+
+            // 获取所有img元素并逐个设置样式
+            const imgElements = document.querySelectorAll('img');
+            imgElements.forEach(function (imgElement) {
+                imgElement.style.filter = 'brightness(100%)';
+                imgElement.style.animation = 'darkenImage 2s ease-in-out forwards';
+            });
+            // 监听html元素的动画结束事件
+            htmlElement.addEventListener('animationend', function () {
+                // 跳转的目标网址
+                window.location.href = './page5.html';
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>R4-TR3</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        html {
+            animation: none;
+            /* animation-name: fadeToBlack;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards; */
+        }
+
+        img {
+            animation: none;
+            /* filter: brightness(100%);
+            animation-name: darkenImage;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards; */
+        }
+
+        /* 白变黑 */
+        @keyframes fadeToBlack {
+            from {
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            to {
+                background-color: black;
+            }
+        }
+
+        @keyframes darkenImage {
+            from {
+                filter: brightness(100%);
+            }
+
+            to {
+                filter: brightness(0%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="one">
+        <div class="left">
+            <img src="image1.jpg" alt="">
+            <div class="text-overlay">
+                <div class="biaoti">Merchandise</div>
+                <div class="jieshi">
+                    As pop culture IPs evolve, the variety of merchandise has gradually become an important part of the IP ecosystem.
+                    <br>
+                    These products not only includetraditional toys, costumes, but also art, digital products, homeware and high-end collectibles.
+                    <br>
+                    Merchandise not only satisfies fans' emotional needs for IP content, but also strengthens brand awareness and loyalty through physical products.
+                    <br>
+                    <br>
+                    This commercial strategy has transformed IPs from purely entertainment content into multi-layered cultural phenomena, influencing the global fan economy.</div>
+            </div>
+        </div>
+        
+
+        <div class="mid">
+            <img src="darthvader.jpg" alt="">
+            <div class="text-overlay">
+                <div class="biaoti">Star Wars Celebration</div>
+                <div class="jieshi1">
+                    The Star Wars Celebration is the world's largest official Star Wars fan event, held in a different location every few years.
+                    <br> <br>
+                    The celebration usually lasts 4 to 5 days and attracts more than 50,000 fans from all over the world. It features exclusive trailer releases, actor meet-and-greets, themed exhibitions, cosplay competitions and much more. It serves as a platform built around the Star Wars IP.
+                    <br> <br>
+                    This event not only showcases the history and future of Star Wars, but also highlights its deep influence in global culture and its community cohesion.
+                    </div> 
+                <div class="tiaozhuan"><a href="https://www.starwarscelebration.com/">Official Website</a></div>
+            </div>
+        </div>
+
+        
+        <div class="right">
+            <div class="top">
+                <div class="zuo">
+                    <img src="pokemon.jpg" alt="">
+                    <div class="text-overlay">
+                        <div class="biaoti">Media Franchise</div>
+                        <div class="jieshi2">Pokémon is a cross-platform media franchise created by Nintendo.<br>
+                            Since its launch in 1996, its total revenue has reached $98.9 billion.
+                        </div>
+                        <div class="tiaozhuan"><a></a></div>
+                    </div>
+                </div>
+                <div class="you">
+                    <img src="hp.jpg" alt="">
+                    <div class="text-overlay">
+                        <div class="biaoti">Multimedia</div>
+                        <div class="jieshi3">The Harry Potter series started with novels and has gradually expanded into multimedia forms such as movies, stage plays, video games and more.
+                            </div>
+                        <div class="tiaozhuan"><a href="https://www.harrypotter.com/">Official Website</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="two">
+                <img src="ILM.jpg" alt="">
+                <div class="text-overlay">
+                    <div class="biaoti">Industrial Revolution</div>
+                    <div class="jieshi4">Industrial Light & Magic is a visual effects company founded by George Lucas in 1975.
+                        ILM was a pioneer in introducing computer-generated imagery (CGI) and digital compositing,
+                        driving the film industry's transformation from physical models to digital effects.
+                        Today, ILM continues to lead technological innovation, providing advanced visual effects solutions for film and television, streaming, and theme park projects.
+                    <br> <br> <br>
+                    </div>
+                        <div class="tiaozhuan"><a href="https://www.ilm.com/">Official Website</a></div>
+                    <div class="tiaozhuan"><a href="https://www.disneyplus.com/en-gb/series/light-magic/3OtlwhtW6Z7Es">Documentary</a>
+                    </div>
+                </div>
+            </div>
+            <div class="three">
+                <img src="disney.jpg" alt="">
+                <div class="text-overlay">
+                    <div class="biaoti">Fan Base</div>
+                    <div class="jieshi5">
+                        As a global entertainment leader, Disney's core concept of ‘creating dreams’ brings magical experiences to audiences around the world through multiple channels such as movies, animation, and theme parks.
+                        <br>Disneyland offers immersive experiences and has become an emotional connection point for fans.<br>
+                        Also events like the D23 exhibition provide an interactive platform for fans.</div>
+                    <div class="tiaozhuan"><a href="https://ultimatefanevent.d23.com/">D23 2024</a></div>
+                </div>
+            </div>
+
+            <p style="position:absolute; margin-top: 45%; margin-left: -50%;z-index: 50; font-family: 'Courier New', Courier, monospace; font-size: 14px;">Beyond the object lies a world of creation.</p>       
+            <div class="next"><a href="#" id="blackenButton">NEXT</a>.</div>
+        
+
+
+            <script>
+                const blackenButton = document.getElementById('blackenButton');
+
+                blackenButton.addEventListener('click', function () {
+                    // 获取html元素并应用页面变黑动画
+                    const htmlElement = document.documentElement;
+                    htmlElement.style.animation = 'fadeToBlack 1s ease-in-out forwards';
+
+                    // 获取所有img元素并逐个设置样式
+                    const imgElements = document.querySelectorAll('img');
+                    imgElements.forEach(function (imgElement) {
+                        imgElement.style.filter = 'brightness(100%)';
+                        imgElement.style.animation = 'darkenImage 1s ease-in-out forwards';
+                    });
+                    // 监听html元素的动画结束事件
+                    htmlElement.addEventListener('animationend', function () {
+                        // 在这里设置跳转的目标网址
+                        window.location.href = './page3.html';
+                    });
+                });
+            </script>
+</body>
+
+</html>

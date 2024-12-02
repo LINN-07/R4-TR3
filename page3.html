@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            background-color: #000000;
+            overflow: hidden; 
+        }
+
+        .shell {
+            display: grid;
+            grid-template-columns: repeat(15, 40px);
+            grid-template-rows: repeat(3, 40px);
+            grid-gap: 1.5rem;
+        }
+
+        .item {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%; /* 圆形 */
+            background-color: rgb(74, 68, 68); 
+            border-left: solid 15px #323232;
+            transition: transform 0.1s; /* 平滑过渡效果 */
+        }
+
+        .item::after, .item::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+            left: 20px;
+            background-color: #ff0000;
+        }
+
+        .item::after {
+            top: 30px;
+        }
+
+        .item::before {
+            bottom: 30px;
+        } 
+        
+        p {
+            position: absolute;
+            top: 50%;
+            bottom: 400px;  /* 适当调整 */
+            right: 20px;   /* 适当调整 */
+            color: white;  /* 文本颜色 */
+            font-size: 16px;  /* 文本大小 */
+            mix-blend-mode: difference;
+        }
+
+        .lighting {
+            position: absolute;
+            width: 250px; 
+            height: 250px;
+            border-radius: 50%;
+            background: yellow; 
+            transition: width 0.3s, height 0.3s;  /* 平滑过渡 */
+            mix-blend-mode: difference;  /* 与背景形成差异化 */
+            transform: translate(-50%, -50%); 
+        }
+
+        .text {
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            transition: color 0.2s ease;
+            mix-blend-mode: difference;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .text1 {
+            top: 50%;
+            left: 10%;
+        }
+
+        .text2 {
+            top: 50%;
+            left: 25%;
+        }
+
+        .text3 {
+            top: 50%;
+            left: 40%;
+        }
+
+        .text4 {
+            top: 50%;
+            left: 60%;
+        }
+
+        .text5 {
+            top: 50%;
+            left: 75%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="shell">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="shell" style="margin-top: auto;">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="lighting"></div>
+
+    <script>
+        document.addEventListener('mousemove', e => {
+            const items = document.querySelectorAll(".item");
+
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            // 使圆形跟随鼠标移动
+            items.forEach(circle => {
+                const rect = circle.getBoundingClientRect();
+                const diffX = mouseX - (rect.left + rect.width / 2);
+                const diffY = mouseY - (rect.top + rect.height / 2);
+
+                const radians = Math.atan2(diffY, diffX);
+
+                const angle = radians * 180 / Math.PI;
+
+                circle.style.transform = `rotate(${angle}deg)`;
+            });
+
+            // 使光晕跟随鼠标位置
+            const lighting = document.querySelector('.lighting');
+
+            lighting.style.left = mouseX - lighting.offsetWidth / 2 + 'px';
+            lighting.style.top = mouseY - lighting.offsetHeight / 2 + 'px';
+            lighting.style.transform = 'scale(1)';
+        });
+    </script>
+
+<div class="text text1">Popularity</div>
+<div class="text text2">Community</div>
+<div class="text text3">Identity</div>
+<div class="text text4">Symbolization</div>
+<div class="text text5">Spirituality</div>
+
+
+
+
+<p>What turns culture into <b><i><a href="page4.html" style="color: white;">faith</a></i></b>?</p>
+
+</body>
+</html>

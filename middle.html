@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>R4-TR3</title>
+    <style>
+       .box {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            /* 指定应用的动画名称为fadeToBlack，动画持续时间为3秒，时间函数为ease-in-out，动画结束后保留最后一帧状态 */
+            animation-name: fadeToBlack;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeToBlack {
+            from {
+                background-color: rgba(0, 0, 0, 0);
+            }
+
+            to {
+                background-color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box"></div>
+</body>
+
+</html>
